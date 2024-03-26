@@ -1,0 +1,16 @@
+name: Manual Build
+on:
+  workflow_dispatch:
+   
+
+concurrency:
+  group:  ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  run:
+    uses: ./.github/workflows/build.yml
+    secrets: inherit
+    permissions: write-all
+    with:
+      upload-artifact: true
