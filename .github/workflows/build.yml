@@ -15,7 +15,7 @@ on:
 env:
   IS_GITHUB_ACTIONS: 1
   CHANNEL: "${{ inputs.channel }}"
-  FLUTTER_VERSION: '3.19.x'
+  FLUTTER_VERSION: '3.16.9'
   NDK_VERSION: r26b
   UPLOAD_ARTIFACT: "${{ inputs.upload-artifact }}"
   TAG_NAME: "${{ inputs.tag-name }}"
@@ -39,7 +39,7 @@ jobs:
       - uses: subosito/flutter-action@v2.12.0 #issue with 2.13
         with:
           flutter-version: ${{ env.FLUTTER_VERSION }}
-          channel: 'stable'
+          channel: 'master'
           cache: true
       - name: Prepare
         run: make linux-prepare
@@ -58,34 +58,34 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - platform: android-apk
-            os: ubuntu-latest
-            targets: apk
+          #- platform: android-apk
+          #  os: ubuntu-latest
+          #  targets: apk
 
-          - platform: android-aab
-            os: ubuntu-latest
-            targets: aab
+          #- platform: android-aab
+          #  os: ubuntu-latest
+          #  targets: aab
 
           - platform: windows
             os: windows-2019
             aarch: amd64
             targets: exe,msix
 
-          - platform: linux
-            os: ubuntu-22.04
-            aarch: amd64
-            targets: AppImage,deb,rpm
+          #- platform: linux
+          #  os: ubuntu-22.04
+          #  aarch: amd64
+          #  targets: AppImage,deb,rpm
 
-          - platform: macos
-            os: macos-13
-            aarch: universal
-            targets: dmg,pkg
+          #- platform: macos
+          #  os: macos-13
+          #  aarch: universal
+          #  targets: dmg,pkg
             
-          - platform: ios
-            os: macos-13
-            aarch: universal
-            filename: hiddify-ios
-            targets: ipa
+          #- platform: ios
+          #  os: macos-13
+          #  aarch: universal
+          #  filename: hiddify-ios
+          #  targets: ipa
     runs-on: ${{ matrix.os }}
     steps:
       - name: checkout

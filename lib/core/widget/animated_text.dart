@@ -27,7 +27,7 @@ class AnimatedText extends Text {
         if (size) {
           child = SizeTransition(
             axis: Axis.horizontal,
-            fixedCrossAxisSizeFactor: 1,
+            //fixedCrossAxisSizeFactor: 1,
             sizeFactor: Tween<double>(begin: 0.88, end: 1).animate(animation),
             child: child,
           );
