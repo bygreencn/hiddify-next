@@ -39,8 +39,9 @@ jobs:
       - uses: subosito/flutter-action@v2.12.0 #issue with 2.13
         with:
           flutter-version: ${{ env.FLUTTER_VERSION }}
-          channel: 'master'
+          channel: 'stable'
           cache: true
+          
       - name: Prepare
         run: make linux-prepare
       - name: Test
@@ -111,24 +112,31 @@ jobs:
         uses: subosito/flutter-action@v2.12.0 #issue with 2.13
         with:
           flutter-version: ${{ env.FLUTTER_VERSION }}
+          # flutter-version-file: pubspec.yaml
           channel: 'stable'
           cache: true
+
+      
       - name: Setup Java
         if: startsWith(matrix.platform,'android')
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v4
         with:
           distribution: 'zulu'
           java-version: 17
       - name: Setup NDK
         if: startsWith(matrix.platform,'android')
-        uses: nttld/setup-ndk@v1.4.1
+        uses: nttld/setup-ndk@v1
         id: setup-ndk
         with:
           ndk-version: ${{ env.NDK_VERSION }}
           add-to-path: true
           link-to-sdk: true
 
-
+      - name: Setup Gradle 8.1
+        if: startsWith(matrix.platform,'android')
+        uses: gradle/actions/setup-gradle@v3
+        with:
+          gradle-version: 7.5
       - name: Setup dependencies
         run: |
           make ${{ matrix.platform }}-install-dependencies
@@ -348,7 +356,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          prerelease: ${{ env.CHANNEL == 'dev' }}
+          # prerelease: ${{ env.CHANNEL == 'dev' }}
+          prerelease: true
           tag_name: ${{ env.TAG_NAME }}
           body_path: './release.md'
           files: ./out/*

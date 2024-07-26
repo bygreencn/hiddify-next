@@ -58,7 +58,7 @@ prepare:
 	@echo    make macos-prepare
 	@echo    make ios-prepare
 
-windows-prepare: get-geo-assets get gen translate windows-libs
+windows-prepare: get gen translate windows-libs
 	
 ios-prepare: get-geo-assets get gen translate ios-libs 
 macos-prepare: get-geo-assets get gen translate macos-libs
@@ -143,7 +143,8 @@ gen_translations: #generating missing translations using google translate
 android-release: android-apk-release
 
 android-apk-release:
-	flutter build apk --target-platform android-arm,android-arm64,android-x64 --split-per-abi --target $(TARGET) $(BUILD_ARGS)
+	echo flutter build apk --target $(TARGET) $(BUILD_ARGS) --target-platform android-arm,android-arm64,android-x64 --split-per-abi --verbose  
+	flutter build apk --target $(TARGET) $(BUILD_ARGS) --target-platform android-arm,android-arm64,android-x64 --verbose  
 	ls -R build/app/outputs
 
 android-aab-release:
@@ -190,8 +191,9 @@ ios-libs: #not tested
 	curl -L $(CORE_URL)/$(CORE_NAME)-ios.tar.gz | tar xz -C "$(IOS_OUT)"
 
 get-geo-assets:
-	curl -L https://github.com/SagerNet/sing-geoip/releases/latest/download/geoip.db -o $(GEO_ASSETS_DIR)/geoip.db
-	curl -L https://github.com/SagerNet/sing-geosite/releases/latest/download/geosite.db -o $(GEO_ASSETS_DIR)/geosite.db
+	echo ""
+	# curl -L https://github.com/SagerNet/sing-geoip/releases/latest/download/geoip.db -o $(GEO_ASSETS_DIR)/geoip.db
+	# curl -L https://github.com/SagerNet/sing-geosite/releases/latest/download/geosite.db -o $(GEO_ASSETS_DIR)/geosite.db
 
 build-headers:
 	make -C libcore -f Makefile headers && mv $(BINDIR)/$(CORE_NAME)-headers.h $(BINDIR)/libcore.h

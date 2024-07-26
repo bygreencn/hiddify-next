@@ -1,7 +1,7 @@
 name: hiddify
 description: Cross Platform Multi Protocol Proxy Frontend.
 publish_to: "none"
-version: 1.1.1+10101
+version: 1.9.0+10900
 
 environment:
   sdk: ">=3.2.6 <4.0.0"
@@ -12,7 +12,13 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   cupertino_icons: ^1.0.6
-  intl: ^0.18.1
+  intl: ^0.19.0
+  # humanizer: ^2.2.0
+  # intl: ^0.19.0
+  humanizer:
+    git:
+      url: https://github.com/alex-relov/humanizer
+      ref: up-version
   slang: ^3.30.1
   slang_flutter: ^3.30.0
   fpdart: ^1.1.0
@@ -26,9 +32,9 @@ dependencies:
   sqlite3_flutter_libs: ^0.5.20
   shared_preferences: ^2.2.2
   dio: ^5.4.1
-  ffi: ^2.1.0
+  ffi: ^2.1.2
   path_provider: ^2.1.1
-  mobile_scanner: ^4.0.0
+  mobile_scanner: ^5.1.1
   protocol_handler: ^0.2.0
   flutter_native_splash: ^2.3.10
   share_plus: ^7.2.2
@@ -40,7 +46,7 @@ dependencies:
   launch_at_startup: ^0.2.2
   sentry_flutter: ^7.16.1
   sentry_dart_plugin: ^1.7.1
-  combine: ^0.5.7-0.1.pre
+  combine: ^0.5.7
   path: ^1.8.3
   loggy: ^2.0.3
   flutter_loggy: ^2.0.2
@@ -58,7 +64,7 @@ dependencies:
   percent_indicator: ^4.2.3
   sliver_tools: ^0.2.12
   flutter_adaptive_scaffold: ^0.1.8
-  humanizer: ^2.2.0
+
   upgrader: ^9.0.0
   toastification: ^1.2.1
   version: ^3.0.2
@@ -93,7 +99,7 @@ dev_dependencies:
   json_serializable: ^6.7.1
   freezed: ^2.4.7
   riverpod_generator: ^2.3.11
-  drift_dev: ^2.15.0
+  drift_dev: ^2.16.0
   ffigen: ^8.0.2
   slang_build_runner: ^3.30.0
   flutter_gen_runner: ^5.4.0
@@ -108,8 +114,8 @@ dependency_overrides:
 flutter:
   uses-material-design: true
   assets:
-    - assets/core/geoip.db
-    - assets/core/geosite.db
+    # - assets/core/geoip.db
+    # - assets/core/geosite.db
     - assets/images/logo.svg
     - assets/images/tray_icon.ico
     - assets/images/tray_icon.png
