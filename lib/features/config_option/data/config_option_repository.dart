@@ -45,12 +45,12 @@ abstract class ConfigOptions {
 
   static final resolveDestination = PreferencesNotifier.create<bool, bool>(
     "resolve-destination",
-    false,
+    true,
   );
 
   static final ipv6Mode = PreferencesNotifier.create<IPv6Mode, String>(
     "ipv6-mode",
-    IPv6Mode.disable,
+    IPv6Mode.enable,
     mapFrom: (value) => IPv6Mode.values.firstWhere((e) => e.key == value),
     mapTo: (value) => value.key,
   );
@@ -71,6 +71,7 @@ abstract class ConfigOptions {
   static final directDnsAddress = PreferencesNotifier.create<String, String>(
     "direct-dns-address",
     "1.1.1.1",
+    defaultValueFunction: (ref) => ref.read(region) == Region.cn ? "223.5.5.5" : "1.1.1.1",
     validator: (value) => value.isNotBlank,
   );
 
