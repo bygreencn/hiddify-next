@@ -1354,7 +1354,7 @@ class _ReplaceTextWithFieldState extends State<_ReplaceTextWithField> {
             });
             _focusNode.requestFocus();
           },
-          mouseCursor: WidgetStateMouseCursor.textable,
+          mouseCursor: MaterialStateMouseCursor.textable,
           child: widget.initialValue is String && _text.isEmpty ? const SizedBox(width: 400, height: 18) : wrapWithColoredBox(_text),
         );
       }
