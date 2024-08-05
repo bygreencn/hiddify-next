@@ -179,6 +179,7 @@
         "ru": "Rusia (ru)",
         "af": "Afganistán (af)",
         "id": "Indonesia (id)",
+        "tr": "Turquía (tr) 🇹🇷",
         "other": "Otro"
       },
       "themeMode": "Modo temático",
@@ -239,7 +240,7 @@
     "pageTitle": "Acerca de",
     "version": "Versión",
     "sourceCode": "Código fuente",
-    "telegramChannel": "Canal de telegramas",
+    "telegramChannel": "Canal de Telegram",
     "checkForUpdate": "Buscar actualizaciones",
     "privacyPolicy": "Política de privacidad",
     "termsAndConditions": "Términos y condiciones"
@@ -380,7 +381,7 @@
     "localDnsPort": "Puerto DNS local",
     "allowConnectionFromLan": "Permitir conexión desde LAN",
     "tunImplementation": "Implementación de TUN",
-    "mtu": "MTU",
+    "mtu": "Tamaño de paquete (MTU)",
     "connectionTestUrl": "URL de prueba de conexión",
     "urlTestInterval": "URL Prueba de Intervalo",
     "enableClashApi": "Habilitar API de choque",

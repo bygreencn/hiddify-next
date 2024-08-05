@@ -179,7 +179,7 @@
         "ru": "Russia (ru) 🇷🇺",
         "af": "Afghanistan (af) 🇦🇫",
         "id": "Indonesia (id) 🇮🇩",
-        "tr": "Turkey (tr) 🇹🇷",
+        "tr": "Türkiye (tr) 🇹🇷",
         "other": "Other"
       },
       "themeMode": "Theme Mode",
@@ -381,7 +381,7 @@
     "localDnsPort": "Local DNS Port",
     "allowConnectionFromLan": "Share VPN in Local Network",
     "tunImplementation": "TUN Implementation",
-    "mtu": "MTU",
+    "mtu": "Packet Size (MTU)",
     "connectionTestUrl": "Connection Test URL",
     "urlTestInterval": "URL Test Interval",
     "enableClashApi": "Enable Clash API",
@@ -416,5 +416,10 @@
     "warpNoiseSize": "Noise Size",
     "warpNoiseMode": "Noise Mode",
     "warpNoiseDelay": "Noise Delay"
+  },
+  "window":{
+    "hide": "Hide",
+    "close": "Exit",
+    "alertMessage":"Hide or Exit the application?"
   }
 }

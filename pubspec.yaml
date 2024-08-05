@@ -1,7 +1,7 @@
 name: hiddify
 description: Cross Platform Multi Protocol Proxy Frontend.
 publish_to: "none"
-version: 2.1.1+20101
+version: 2.1.4+20104
 
 environment:
   sdk: ">=3.2.6 <4.0.0"
@@ -121,7 +121,9 @@ flutter:
     - assets/images/tray_icon_dark.ico
     - assets/images/tray_icon_dark.png
     - assets/images/tray_icon_connected.ico
+    - assets/images/tray_icon_connected.png
     - assets/images/tray_icon_disconnected.ico
+    - assets/images/tray_icon_disconnected.png
     - assets/images/connect_norouz.PNG
     - assets/images/disconnect_norouz.PNG
 
