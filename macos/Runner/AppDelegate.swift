@@ -1,13 +1,14 @@
 import Cocoa
 import FlutterMacOS
 
+import UserNotifications
 @NSApplicationMain
 class AppDelegate: FlutterAppDelegate {
   override func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
     // https://github.com/leanflutter/window_manager/issues/214
     return false
   }
-  func applicationDidFinishLaunching(_ aNotification: Notification) {
+  override func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Request notification authorization
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge]) { granted, error in
             if let error = error {
