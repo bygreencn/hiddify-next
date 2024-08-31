@@ -74,7 +74,7 @@ class SettingsInputDialog<T> extends HookConsumerWidget with PresLogger {
                   itemBuilder: (context, suggestion) {
                     return ListTile(
                       contentPadding: const EdgeInsets.symmetric(vertical: 3, horizontal: 10), // Minimize ListTile padding
-                      minTileHeight: 0,
+                      //minTileHeight: 0,
                       title: Text(
                         suggestion,
                         textDirection: TextDirection.ltr,
